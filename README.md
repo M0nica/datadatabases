@@ -7,3 +7,5 @@
   - Using the Beautiful Soup library to scrape web pages.
 - Homework 4
   - Focus on list comprehensions, string operations and regular expression
+- Homework 5
+  - Created a relational database in SQL with many to many relationships. This database is supposed to represent cat cafe data. 
