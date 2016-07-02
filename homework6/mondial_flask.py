@@ -12,8 +12,6 @@ from decimal import Decimal
 #from fractions import Fraction
 
 
-
-
 import pg8000
 
 app = Flask(__name__)
@@ -24,8 +22,21 @@ def get_lakes():
     cursor = conn.cursor()
     # can set a population_gt to say how large the population may be .
     type = str(request.args.get('type', 0))
+    sorted  = str(request.args.get('sort', 0))
+    print("sort by", sorted)
+    print("filter by ", type)
 
-    if type:
+    if (type != str(0)) and (sorted != str(0)):
+
+            cursor.execute(
+                """
+            SELECT name, altitude, area, type
+            FROM lake
+            WHERE type = %s
+            ORDER BY """ + sorted, [type])
+
+    elif type != str(0):
+
         cursor.execute(
             """
         SELECT name, altitude, area, type
@@ -33,7 +44,15 @@ def get_lakes():
         WHERE type = %s
         ORDER BY name
         """, [type])
+    elif sorted != str(0):
+        cursor.execute(
+             """
+         SELECT name, altitude, area, type
+         FROM lake
+         ORDER BY """ + sorted
+         )
     else:
+        print("There is no parameter.")
         cursor.execute(
             """SELECT name, altitude, area, type
             FROM lake
