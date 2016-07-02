@@ -8,4 +8,6 @@
 - Homework 4
   - Focus on list comprehensions, string operations and regular expression
 - Homework 5
-  - Created a relational database in SQL with many to many relationships. This database is supposed to represent cat cafe data. 
+  - Created a relational database in SQL with many to many relationships. This database is supposed to represent cat cafe data.
+- Homework 6
+  - Imported mondial geographical data into a SQL database and created a Flask application that connects to the mondial database and uses SQL commands to return jsonified data from the database based on the queries that a user enters in the web application. 
