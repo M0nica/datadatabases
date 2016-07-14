@@ -1,0 +1,11 @@
+Grade: 10 / 10
+
+I loved this solution to dealing with the Nones in your data:
+
+        output.append({'name': item[0],
+        'altitude': float(item[1] or 0),
+        'area': float(item[2] or 0),
+        'type': item[3]})
+        
+I did notice that some of your output was different than Allison's -- is your Mondial database up to date? I think you mentioned that it was not, but your code looks correct! 
+
